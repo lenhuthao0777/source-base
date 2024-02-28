@@ -1,7 +1,13 @@
-import * as React from 'react';
+import { Label, Button } from './components'
 
 const App = () => {
-  return <h2 className='text-red-500 text-2xl'>abc</h2>;
-};
+  return (
+    <div className='px-5'>
+      abc
+      <Label />
+      <Button />
+    </div>
+  )
+}
 
-export default App;
+export default App
