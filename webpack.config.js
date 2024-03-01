@@ -6,7 +6,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin')
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin')
 const CompressionPlugin = require('compression-webpack-plugin')
-const { webpack } = require('webpack')
+const webpack = require('webpack')
 
 /** @type {(env: any, argv) => import('webpack').Configuration} **/
 module.exports = (env, argv) => {
@@ -101,7 +101,7 @@ module.exports = (env, argv) => {
     ],
     devServer: {
       hot: true,
-      port: 3000,
+      port: process.env.PORT,
       historyApiFallback: true,
       static: {
         directory: path.resolve(__dirname, './src/public', 'index.html'),
@@ -114,6 +114,7 @@ module.exports = (env, argv) => {
   if (isProduction) {
     config.plugins = [
       ...config.plugins,
+      new webpack.ProgressPlugin(),
       new CompressionPlugin({
         test: /\.(css|js)$/,
         algorithm: 'brotliCompress'

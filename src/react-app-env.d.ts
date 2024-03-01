@@ -15,3 +15,22 @@ declare module '*.svg' {
   const src: string
   export default src
 }
+
+// declare namespace React {
+//   function lazy<T extends ComponentType<any>>(factory: () => Promise<{ default: T }>): T
+// }
+
+// function lazy<T extends ComponentType<any>>(factory: () => Promise<{ default: T }>): LazyExoticComponent<T>
+
+
+declare function createRoutesFromElements(
+  children: React.ReactNode
+): RouteObject[];
+
+interface RouteObject {
+  caseSensitive?: boolean;
+  children?: RouteObject[];
+  element?: React.ReactNode;
+  index?: boolean;
+  path?: string;
+}
