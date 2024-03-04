@@ -21,7 +21,7 @@ module.exports = (env, argv) => {
     resolve: {
       extensions: ['.tsx', '.ts', '.jsx', '.js'],
       alias: {
-        '@src': path.resolve(__dirname, './src')
+        '@': path.resolve(__dirname, './')
       }
     },
     output: {

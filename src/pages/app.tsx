@@ -1,4 +1,4 @@
-import { Label, Button } from './components'
+import { Label, Button } from '@/src/components'
 
 const App = () => {
   return (

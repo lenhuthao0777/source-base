@@ -1,43 +1,28 @@
-import { IndexRouteProps, Route, createBrowserRouter, createRoutesFromElements } from 'react-router-dom'
-// const Home = lazy(() => import('../pages/home'))
-import Home from '../pages/home'
-import About from '../pages/about'
+import { lazy } from 'react'
+import {
+  Routes,
+  Route,
+  BrowserRouter
+} from 'react-router-dom'
 
-type RouteProps = IndexRouteProps & {
-  children?: IndexRouteProps[]
+const Home = lazy(() => import('../pages/home'))
+const About = lazy(() => import('../pages/about'))
+const App = lazy(() => import('../pages/app'))
+
+// import About from '../pages/about'
+// import App from '../pages/app'
+// import Home from '../pages/home'
+
+const Router = () => {
+  return (
+    <BrowserRouter future={{ v7_startTransition: true }}>
+      <Routes>
+        <Route path='/' element={<Home />} index />
+        <Route path='/app' element={<App />} />
+        <Route path='/about' element={<About />} index />
+      </Routes>
+    </BrowserRouter>
+  )
 }
 
-const routes = [
-  {
-    id: '1',
-    index: true,
-    path: '',
-    element: <Home />,
-  },
-  {
-    id: '2',
-    index: true,
-    path: '/about',
-    element: <About />
-  }
-]
-
-// const ListRouters = routes.map((route: any) => (
-//   <Route key={route.id} path={route.path} element={route.element}>
-//     {route?.children?.length
-//       ? route.children.map((item: any) => (
-//           <Route key={item.id} path={item.path}>
-//             {item.children
-//               ? item.children.map((child: any) => (
-//                   <Route key={child.id} index={child.index} path={child.path} element={child.element} />
-//                 ))
-//               : null}
-//           </Route>
-//         ))
-//       : null}
-//   </Route>
-// ))
-
-const routers = createBrowserRouter(routes)
-
-export { routers }
+export default Router
