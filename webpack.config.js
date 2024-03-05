@@ -101,7 +101,7 @@ module.exports = (env, argv) => {
     ],
     devServer: {
       hot: true,
-      port: process.env.PORT,
+      port: 8080,
       historyApiFallback: true,
       static: {
         directory: path.resolve(__dirname, './src/public', 'index.html'),

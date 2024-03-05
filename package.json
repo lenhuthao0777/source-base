@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "dev": "webpack serve --mode=development --port=3000",
+    "dev": "webpack serve --mode=development",
     "build:prod": "pnpm clean && webpack --mode=production",
     "build": "pnpm clean && webpack --mode=development",
     "build:analyze": "pnpm clean && webpack --mode=production --analyze=true",

@@ -1,5 +1,7 @@
 const Home = () => {
-  return <h2>Home Page</h2>
+  return <div>
+    <input type="date" />
+  </div>
 }
 
 export default Home
