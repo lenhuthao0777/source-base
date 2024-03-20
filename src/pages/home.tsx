@@ -1,6 +1,6 @@
 const Home = () => {
   return <div>
-    <input type="date" />
+    <input type="text" />
   </div>
 }
 
