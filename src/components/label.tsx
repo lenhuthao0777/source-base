@@ -18,10 +18,6 @@ class Label extends Component<LabelProps, State> {
     console.log(this.state)
   }
 
-  componentDidMount(): void {
-    console.log(this.state)
-  }
-
   render(): React.ReactNode {
     return (
       <div>
