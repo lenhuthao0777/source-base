@@ -13,11 +13,11 @@ module.exports = {
   moduleNameMapper: {
     // if your using tsconfig.paths thers is no harm in telling jest
     // '@components/(.*)$': '<rootDir>/src/components/$1',
-    '@/(.*)$': '<rootDir>/src/$1',
+    '@/(.*)$': '<rootDir>/src/$1'
   },
   modulePathIgnorePatterns: [
     // Add patterns to ignore
-    '[/\\\\](dist|build)[/\\\\].+\\.(js|jsx|d.ts)$',
+    '[/\\\\](dist|build)[/\\\\].+\\.(js|jsx|d.ts)$'
     // '<rootDir>/config',
   ],
   transformIgnorePatterns: [`node_modules/(?!(?:.pnpm/)?(flat))`],
@@ -27,20 +27,6 @@ module.exports = {
       tsconfig: 'tsconfig.json'
     }
   },
-  // transform: {
-  //   '^.+\\.(t|j)sx?$': [
-  //     '@swc/jest',
-  //     {
-  //       jsc: {
-  //         transform: {
-  //           react: {
-  //             runtime: 'automatic',
-  //           },
-  //         },
-  //       },
-  //     },
-  //   ],
-  // },
   modulePaths: ['<rootDir>'],
-  // watchPlugins: ['jest-watch-typeahead/filename', 'jest-watch-typeahead/testname'],
+  watchPlugins: ['jest-watch-typeahead/filename', 'jest-watch-typeahead/testname'],
 }

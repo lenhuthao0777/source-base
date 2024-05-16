@@ -124,6 +124,9 @@ devDependencies:
   jest-environment-jsdom:
     specifier: ^29.7.0
     version: 29.7.0
+  jest-watch-typeahead:
+    specifier: ^2.2.2
+    version: 2.2.2(jest@29.7.0)
   js-cookie:
     specifier: ^3.0.5
     version: 3.0.5
@@ -3132,6 +3135,11 @@ packages:
       type-fest: 0.21.3
     dev: true
 
+  /ansi-escapes@6.2.1:
+    resolution: {integrity: sha512-4nJ3yixlEthEJ9Rk4vPcdBRkZvQZlYyu8j4/Mqz5sgIkddmEnH2Yj2ZrnP9S3tQOvSNRUIgVNF/1yPpRAGNRig==}
+    engines: {node: '>=14.16'}
+    dev: true
+
   /ansi-html-community@0.0.8:
     resolution: {integrity: sha512-1APHAyr3+PCamwNw3bXCPp4HFLONZt/yIH0sZp0/469KWNTEy+qN5jQ3GVX6DMZ1UXAi34yVwtTeaG/HpBuuzw==}
     engines: {'0': node >= 0.8.0}
@@ -3704,9 +3712,19 @@ packages:
     engines: {node: ^12.17.0 || ^14.13 || >=16.0.0}
     dev: true
 
+  /chalk@5.3.0:
+    resolution: {integrity: sha512-dLitG79d+GV1Nb/VYcCDFivJeK1hiukt9QjRNVOsUtTy1rR1YJsmpGGTZ3qJos+uw7WmWF4wUwBd9jxjocFC2w==}
+    engines: {node: ^12.17.0 || ^14.13 || >=16.0.0}
+    dev: true
+
   /char-regex@1.0.2:
     resolution: {integrity: sha512-kWWXztvZ5SBQV+eRgKFeh8q5sLuZY2+8WUIzlxWVTg+oGwY14qylx1KbKzHd8P6ZYkAg0xyIDU9JMHhyJMZ1jw==}
     engines: {node: '>=10'}
+    dev: true
+
+  /char-regex@2.0.1:
+    resolution: {integrity: sha512-oSvEeo6ZUD7NepqAat3RqoucZ5SeqLJgOvVIwkafu6IP3V0pO38s/ypdVUmDDK6qIIHNlYHJAKX9E7R7HoKElw==}
+    engines: {node: '>=12.20'}
     dev: true
 
   /chokidar@3.6.0:
@@ -6571,6 +6589,22 @@ packages:
       pretty-format: 29.7.0
     dev: true
 
+  /jest-watch-typeahead@2.2.2(jest@29.7.0):
+    resolution: {integrity: sha512-+QgOFW4o5Xlgd6jGS5X37i08tuuXNW8X0CV9WNFi+3n8ExCIP+E1melYhvYLjv5fE6D0yyzk74vsSO8I6GqtvQ==}
+    engines: {node: ^14.17.0 || ^16.10.0 || >=18.0.0}
+    peerDependencies:
+      jest: ^27.0.0 || ^28.0.0 || ^29.0.0
+    dependencies:
+      ansi-escapes: 6.2.1
+      chalk: 5.3.0
+      jest: 29.7.0(@types/node@20.12.12)(ts-node@10.9.2)
+      jest-regex-util: 29.6.3
+      jest-watcher: 29.7.0
+      slash: 5.1.0
+      string-length: 5.0.1
+      strip-ansi: 7.1.0
+    dev: true
+
   /jest-watcher@29.7.0:
     resolution: {integrity: sha512-49Fg7WXkU3Vl2h6LbLtMQ/HyB6rXSIX7SqvBLQmssRBGN9I0PNvPmAmCWSOY6SOvrjhI/F7/bGAv9RtnsPA03g==}
     engines: {node: ^14.15.0 || ^16.10.0 || >=18.0.0}
@@ -9036,6 +9070,14 @@ packages:
     dependencies:
       char-regex: 1.0.2
       strip-ansi: 6.0.1
+    dev: true
+
+  /string-length@5.0.1:
+    resolution: {integrity: sha512-9Ep08KAMUn0OadnVaBuRdE2l615CQ508kr0XMadjClfYpdCyvrbFp6Taebo8yyxokQ4viUd/xPPUA4FGgUa0ow==}
+    engines: {node: '>=12.20'}
+    dependencies:
+      char-regex: 2.0.1
+      strip-ansi: 7.1.0
     dev: true
 
   /string-width@4.2.3:

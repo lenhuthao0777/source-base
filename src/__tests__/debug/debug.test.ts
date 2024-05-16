@@ -62,4 +62,22 @@ describe('Logger functions', () => {
     expect(consoleWarnSpy).not.toHaveBeenCalled()
     expect(consoleErrorSpy).not.toHaveBeenCalled()
   })
+
+  // it('should log messages if NODE_ENV is not development but isDebug is true', () => {
+  //   process.env = { ...originalEnv, NODE_ENV: 'production' }
+  //   Object.defineProperty(global, 'localStorage', {
+  //     value: {
+  //       getItem: jest.fn().mockReturnValue('true')
+  //     },
+  //     writable: true
+  //   })
+
+  //   debug('debug message')
+  //   warn('warn message')
+  //   danger('danger message')
+
+  //   expect(consoleLogSpy).toHaveBeenCalledWith('debug message')
+  //   expect(consoleWarnSpy).toHaveBeenCalledWith('warn message')
+  //   expect(consoleErrorSpy).toHaveBeenCalledWith('danger message')
+  // })
 })
