@@ -1,7 +1,7 @@
 import Root from './root'
 
 class Book extends Root {
-  static endpoint = ''
+  endpoint = 'book'
 }
 
 export default Book

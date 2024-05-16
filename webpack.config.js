@@ -86,7 +86,7 @@ module.exports = (env, argv) => {
       new CopyWebpackPlugin({
         patterns: [
           {
-            from: './src/public',
+            from: './public',
             to: '.',
             filter: (name) => {
               return !name.endsWith('index.html')
@@ -95,7 +95,7 @@ module.exports = (env, argv) => {
         ]
       }),
       new HtmlWebpackPlugin({
-        template: path.resolve(__dirname, './src/public', 'index.html'),
+        template: path.resolve(__dirname, './public', 'index.html'),
         filename: 'index.html'
       })
     ],
@@ -104,7 +104,7 @@ module.exports = (env, argv) => {
       port: 8080,
       historyApiFallback: true,
       static: {
-        directory: path.resolve(__dirname, './src/public', 'index.html'),
+        directory: path.resolve(__dirname, './public', 'index.html'),
         serveIndex: true,
         watch: true
       }

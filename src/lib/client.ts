@@ -4,9 +4,9 @@ import { danger, debug } from './debug'
 import { COOKIES_KEY } from '../enum/cookie.enum'
 
 class Client {
-  private url = process.env.API_ENDPOINT || ''
-  private http
-  private timeout = 16000
+  url = process.env.API_ENDPOINT || ''
+  http
+  timeout = 16000
 
   constructor() {
     this.http = axios.create({
@@ -26,7 +26,7 @@ class Client {
         return request
       },
       (error): Promise<AxiosError> => {
-        console.error(`[request error] [${JSON.stringify(error)}]`)
+        debug(`[request error] [${JSON.stringify(error)}]`)
         return Promise.reject(error)
       }
     )
@@ -37,7 +37,7 @@ class Client {
         return response
       },
       (error: AxiosError): Promise<AxiosError> => {
-        console.error(`[response error] [${JSON.stringify(error)}]`)
+        debug(`[response error] [${JSON.stringify(error)}]`)
         switch (error?.response?.status) {
           case 400:
             // Handle error
@@ -54,23 +54,23 @@ class Client {
     )
   }
 
-  public get<T>(url: string, obj?: object) {
+  get<T>(url: string, obj?: object) {
     return this.http.get<T>(url, obj)
   }
 
-  public post<T>(url: string, obj: object, config?: AxiosRequestConfig) {
+  post<T>(url: string, obj: object, config?: AxiosRequestConfig) {
     return this.http.post<T>(url, obj, config)
   }
 
-  public patch<T>(url: string, obj: object) {
+  patch<T>(url: string, obj: object) {
     return this.http.patch<T>(url, obj)
   }
 
-  public put<T>(url: string, obj: object) {
+  put<T>(url: string, obj: object) {
     return this.http.put<T>(url, obj)
   }
 
-  public delete<T>(url: string, obj?: object) {
+  delete<T>(url: string, obj?: object) {
     return this.http.delete<T>(url, obj)
   }
 }

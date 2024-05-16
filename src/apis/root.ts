@@ -1,7 +1,7 @@
 import Client from '../lib/client'
 
 class Root extends Client {
-  private endpoint = ''
+  endpoint = ''
 
   async index<T>(params?: any) {
     return await this.get<T>(this.endpoint, { params }).then((res) => res.data)
