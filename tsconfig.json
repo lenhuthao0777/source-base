@@ -20,5 +20,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["src/**/*"]
+  "include": ["src/**/*"],
+  "exclude": ["./dist", "**/__test__/*"]
 }
