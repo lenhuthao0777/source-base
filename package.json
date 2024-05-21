@@ -6,7 +6,7 @@
     "dev": "webpack serve --mode=development",
     "build:prod": "pnpm clean && webpack --mode=production",
     "build": "pnpm clean && webpack --mode=development",
-    "build:analyze": "pnpm clean && webpack --mode=production --analyze=true",
+    "build:analyze": "pnpm clean && webpack --mode=production --analyze",
     "preview": "serve dist/ -s",
     "clean": "rimraf dist",
     "lint": "eslint --ext js,jsx,ts,tsx src/",
