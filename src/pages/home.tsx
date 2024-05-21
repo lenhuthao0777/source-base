@@ -25,9 +25,21 @@ const Home = () => {
 
   return (
     <div>
-      <ul>
+      <ul className='grid grid-cols-4 gap-2'>
         {data?.map((item) => {
-          return <li key={item.id} className='text-gray-500 px-2 py-2'>{item.name}</li>
+          return (
+            <li key={item.id} className='text-gray-500 px-2 py-2'>
+              <div className='bg-white shadow-md rounded-lg p-4 flex flex-col'>
+                <img src={'/icon.svg'} alt='name' className='w-full h-40 object-fill rounded-t-lg' />
+                <h3 className='text-xl font-semibold text-gray-800 mt-2'>{item.name}</h3>
+                <p className='text-gray-600 text-sm mb-2'>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero repudiandae sint nobis porro nostrum
+                  quo repellendus reprehenderit quasi deleniti beatae.
+                </p>
+                {/* Add more elements and styles as needed */}
+              </div>
+            </li>
+          )
         })}
       </ul>
       <button
