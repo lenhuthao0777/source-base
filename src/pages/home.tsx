@@ -40,7 +40,7 @@ const Home = () => {
           })
         }
       >
-        click
+        click1
       </button>
     </div>
   )
