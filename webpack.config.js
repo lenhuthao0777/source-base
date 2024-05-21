@@ -11,7 +11,7 @@ const webpack = require('webpack')
 /** @type {(env: any, argv) => import('webpack').Configuration} **/
 module.exports = (env, argv) => {
   const isProduction = argv.mode === 'production'
-  const isAnalyze = Boolean(env?.analyze)
+  const isAnalyze = Boolean(argv?.analyze)
 
   const config = {
     mode: argv.mode || 'development',
