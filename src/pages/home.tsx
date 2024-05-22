@@ -17,7 +17,7 @@ const Home = () => {
     }
   })
 
-  debug(process.env.API_ENDPOINT)
+  debug(process.env.TEST_ENV)
 
   if (isLoading) {
     return <p>loading...</p>
