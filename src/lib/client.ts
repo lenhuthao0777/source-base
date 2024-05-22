@@ -9,7 +9,6 @@ class Client {
   timeout = 16000
 
   constructor() {
-    console.log(this.url)
     this.http = axios.create({
       baseURL: this.url,
       timeout: this.timeout
