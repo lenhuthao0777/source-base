@@ -9,6 +9,7 @@ class Client {
   timeout = 16000
 
   constructor() {
+    console.log(this.url)
     this.http = axios.create({
       baseURL: this.url,
       timeout: this.timeout
@@ -21,7 +22,7 @@ class Client {
         if (token) {
           request.headers['Authorization'] = `Bearer ${token}`
           // debug(`[request] [${JSON.stringify(request)}]`)
-          debug(token)
+          // debug(token)
         }
         return request
       },
