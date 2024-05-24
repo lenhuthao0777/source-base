@@ -1,7 +1,10 @@
 import Root from './root'
 
 class Book extends Root {
-  endpoint = 'book'
+  constructor() {
+    super()
+    this.endpoint = 'book'
+  }
 }
 
 export default Book
