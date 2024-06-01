@@ -1,12 +1,12 @@
-import axios, { AxiosError, AxiosRequestConfig, AxiosResponse } from 'axios'
+import axios, { AxiosError, AxiosRequestConfig, AxiosResponse, InternalAxiosRequestConfig } from 'axios'
 import Cookies from 'js-cookie'
 import { danger, debug } from './debug'
 import { COOKIES_KEY } from '../enum/cookie.enum'
 
 class Client {
-  url = process.env.API_ENDPOINT || ''
-  http
-  timeout = 16000
+  private url = process.env.API_ENDPOINT || ''
+  private http
+  private timeout = 16000
 
   constructor() {
     this.http = axios.create({
@@ -15,13 +15,13 @@ class Client {
     })
 
     this.http.interceptors.request.use(
-      (request: any) => {
-        // handle token
+      (request: InternalAxiosRequestConfig) => {
+        // handle get access token
         const token = Cookies.get(COOKIES_KEY.token)
         if (token) {
           request.headers['Authorization'] = `Bearer ${token}`
           // debug(`[request] [${JSON.stringify(request)}]`)
-          // debug(token)
+          debug(`[access token]: ${token}`)
         }
         return request
       },
@@ -33,7 +33,7 @@ class Client {
 
     this.http.interceptors.response.use(
       (response: AxiosResponse) => {
-        debug(`[response] [${JSON.stringify(response)}]`)
+        debug(`[response]: ${JSON.stringify(response)}`)
         return response
       },
       (error: AxiosError): Promise<AxiosError> => {
@@ -54,23 +54,23 @@ class Client {
     )
   }
 
-  get<T>(url: string, obj?: object) {
+  protected get<T>(url: string, obj?: object) {
     return this.http.get<T>(url, obj)
   }
 
-  post<T>(url: string, obj: object, config?: AxiosRequestConfig) {
+  protected post<T>(url: string, obj: object, config?: AxiosRequestConfig) {
     return this.http.post<T>(url, obj, config)
   }
 
-  patch<T>(url: string, obj: object) {
+  protected patch<T>(url: string, obj: object) {
     return this.http.patch<T>(url, obj)
   }
 
-  put<T>(url: string, obj: object) {
+  protected put<T>(url: string, obj: object) {
     return this.http.put<T>(url, obj)
   }
 
-  delete<T>(url: string, obj?: object) {
+  protected delete<T>(url: string, obj?: object) {
     return this.http.delete<T>(url, obj)
   }
 }

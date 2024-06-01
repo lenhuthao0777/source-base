@@ -17,7 +17,7 @@ const Home = () => {
     }
   })
 
-  debug(process.env.TEST_ENV)
+  debug('[ENV]:', process.env.TEST_ENV)
 
   if (isLoading) {
     return <p>loading...</p>
