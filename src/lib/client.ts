@@ -4,7 +4,7 @@ import { danger, debug } from './debug'
 import { COOKIES_KEY } from '../enum/cookie.enum'
 
 class Client {
-  private url = process.env.API_ENDPOINT || ''
+  private url = process.env.API_URL || ''
   private http
   private timeout = 16000
 

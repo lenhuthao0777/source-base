@@ -1,32 +1,18 @@
-// interface HookAction {
-//   getHook: () => void
-//   setHook: () => void
-//   name: string
-// }
+abstract class Person {
+  constructor() {}
 
-// abstract class Hook {
-//   constructor(
-//     private name: string,
-//     private age: string
-//   ) {}
-//   abstract getSalary(): number
-//   get fullName(): string {
-//     return `${this.name} ${this.age}`
-//   }
-//   compensationStatement(): string {
-//     return `${this.name} makes ${this.getSalary()} a month.`
-//   }
-// }
+  abstract getInfo(): string
 
-// class ChildHook extends Hook {
-//   constructor(name: string, age: string, salary: string) {
-//     super(name, age)
-//   }
+  getName() {
+    return 'abc name'
+  }
+}
 
-//   getSalary(): number {
-//     this.name
-//     return 1
-//   }
-// }
+class VietNammese extends Person {
+  getInfo(): string {
+    return 'Viet Nam mita'
+  }
+}
 
-// export { Hook, ChildHook }
+
+export {VietNammese}

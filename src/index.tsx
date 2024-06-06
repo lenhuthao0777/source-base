@@ -1,8 +1,13 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
-import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
+// import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 
+const ReactQueryDevtools = React.lazy(() =>
+  import('@tanstack/react-query-devtools').then((d) => ({
+    default: d.ReactQueryDevtools
+  }))
+)
 import './index.css'
 import Router from './routers'
 
